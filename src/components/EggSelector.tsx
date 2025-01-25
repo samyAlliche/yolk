@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { EggType } from "../types/eggTypes";
 
 interface EggSelectorProps {
@@ -14,6 +14,25 @@ const EggSelector: React.FC<EggSelectorProps> = ({
   handleEggTypeDown,
   isRunning,
 }) => {
+  // Listen for up/down arrow key presses to change egg type
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (isRunning) return; // if timer is running, ignore
+      if (e.key === "ArrowUp") {
+        e.preventDefault(); // optionally prevent scroll
+        handleEggTypeUp();
+      } else if (e.key === "ArrowDown") {
+        e.preventDefault();
+        handleEggTypeDown();
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [isRunning, handleEggTypeUp, handleEggTypeDown]);
+
   return (
     <div className="flex items-center space-x-2 justify-between w-full">
       <div className="flex flex-col items-start">

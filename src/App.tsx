@@ -62,6 +62,7 @@ function App() {
     return () => clearInterval(interval);
   }, [elapsed, currentEggTotalSeconds, isRunning, setIsRunning]);
 
+  // Play the alarm sound when time is up
   const alarmIntervalRef = useRef<number | null>(null);
   useEffect(() => {
     if (timeUp) {

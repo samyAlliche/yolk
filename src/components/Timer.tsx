@@ -1,5 +1,5 @@
 // Timer.tsx
-import React from "react";
+import React, { useEffect } from "react";
 import CircularCountdown from "./CircularCountdown";
 
 interface TimerProps {
@@ -19,6 +19,18 @@ const Timer: React.FC<TimerProps> = ({
   fractionElapsed,
   onCircleClick,
 }) => {
+  // Listen for space key press to start/stop timer
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.code === "Space" || e.key === " ") {
+        e.preventDefault();
+        onCircleClick();
+      }
+    }
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [onCircleClick]);
   return (
     <div className="flex items-center justify-center">
       <CircularCountdown
