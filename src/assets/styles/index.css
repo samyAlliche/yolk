@@ -1,0 +1,44 @@
+@import url(https://db.onlinewebfonts.com/c/c37ebc407f70aab40021fa0177b57637?family=Charade+W00+Regular);
+
+@import "tailwindcss";
+
+@theme {
+  @keyframes yolkPulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+  --color-eggwhite-500: oklch(93.89% 0.0145 64.34);
+  --color-eggshell-500: oklch(71.03% 0.1288 60.83);
+  --color-beige-500: oklch(84.1% 0.0868 77.04);
+  --color-hay-500: oklch(90.44% 0.1148 89.15);
+  --color-yolk-500: oklch(72.77% 0.168 61.54);
+  --color-dark-500: oklch(17.21% 0.0196 63.38);
+  --font-title: "Charade W00 Regular";
+  --animate-yolkPulse: yolkPulse 0.5s ease-in-out infinite;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("/grain.svg") repeat;
+
+  opacity: 0.8;
+  pointer-events: none; /* So it doesn’t block clicks on the page */
+  z-index: 9999; /* Sits above everything else */
+}
