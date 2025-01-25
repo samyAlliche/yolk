@@ -1,6 +1,6 @@
 # yolk 🍳
 
-do you ever stare at your eggs, wondering if they’re going to be gorgeously runny or heartbreakingly rubbery? “yolk” is here to squash that doubt. turn your egg-cooking game from “meh” to “magnificent.” no more egg-on-face moments—just perfect timing and confident cracking.
+do you ever stare at your eggs, wondering if they’re going to be gorgeously runny or heartbreakingly rubbery? “yolk” is here to squash that doubt. just perfect timing and confident cracking.
 
 ![image](https://github.com/user-attachments/assets/a41ba0bc-d5ca-42b3-b8c5-9eddf6223681)
 
